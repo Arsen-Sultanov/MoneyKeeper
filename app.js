@@ -3,9 +3,9 @@ if('serviceWorker' in navigator) {
       .then(reg=> {
         if(reg.installing) {
             console.log('sw installing');
-        } else if(req.waiting) {
+        } else if(reg.waiting) {
             console.log('sw installed');
-        } else if(req.active) {
+        } else if(reg.active) {
             console.log('sw active');
         }
       })

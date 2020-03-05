@@ -13,5 +13,3 @@ if('serviceWorker' in navigator) {
         console.log('sw installing failed' + error)
       });
 }
-
-alert('aaaa');

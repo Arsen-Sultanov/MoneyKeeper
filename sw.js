@@ -1,12 +1,13 @@
-this.addEventListener('install', event=> {
+this.addEventListener('install', function(event) {
     event.waitUntil(
-        caches.open('v1').then(cache=> {
+        caches.open('v1')
+        .then(function(cache) {
               return cache.addAll([
                 './',
                 './index.html',
-                './app.js',
-
-              ]);
-          }).catch(error=> console.log('sw error: ' + error));
+                './app.js'
+              ])
+        })
+        .catch(error=> console.log('sw error: ' + error))
     );
 });

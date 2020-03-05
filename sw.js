@@ -3,9 +3,9 @@ this.addEventListener('install', function(event) {
         caches.open('v1')
         .then(function(cache) {
               return cache.addAll([
-                '/',
-                '/index.html',
-                '/app.js'
+                '/MoneyKeeper/',
+                '/MoneyKeeper/index.html',
+                '/MoneyKeeper/app.js'
               ])
         })
         .catch(error=> console.log('sw error: ' + error))

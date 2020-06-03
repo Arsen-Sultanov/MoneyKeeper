@@ -13,3 +13,11 @@ if('serviceWorker' in navigator) {
         console.log('sw installing failed' + error)
       });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const text = document.querySelector('.text');
+  text.addEventListener('click', function() {
+    alert('hello');
+  });
+  
+});

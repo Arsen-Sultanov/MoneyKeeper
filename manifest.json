@@ -3,7 +3,7 @@
  "short_name": "MoneyKeeper",
  "description": "This is an application that helps you keep track of what you are spending money and keep it safe.",
  "lang": "en",
-
+ "start_url": "./index.html",
  "scope": "MoneyKeeper",
  "display": "standalone",
  "orientation": "any",

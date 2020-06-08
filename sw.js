@@ -1,4 +1,4 @@
-const BASE_URL = '/MoneyKeeper/';
+const BASE_URL = '/';
 const CACHES_V = 'v1'
 const URLS = [
   BASE_URL,
@@ -9,14 +9,13 @@ const URLS = [
 ];
 
 this.addEventListener('install', function(event) {
-    const preCache = async ()=> {
+    event.waitUntil( 
       caches.open(CACHES_V)
         .then(function(cache) {
               return cache.addAll(URLS)
         })
         .catch(error=> console.log('sw error: ' + error))
-    }
-    event.waitUntil();
+    );
 });
 
 this.addEventListener('fetch', (event) => {

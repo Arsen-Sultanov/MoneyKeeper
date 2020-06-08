@@ -1,5 +1,5 @@
 if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js', {scope: '/MoneyKeeper'})
+    navigator.serviceWorker.register('./sw.js', {scope: '/MoneyKeeper/'})
       .then(reg=> {
         if(reg.installing) {
             console.log('sw installing');

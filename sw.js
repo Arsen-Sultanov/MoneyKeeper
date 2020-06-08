@@ -4,12 +4,11 @@ this.addEventListener('install', function(event) {
         caches.open('v1')
         .then(function(cache) {
               return cache.addAll([
-                './',
-                './index.html',
-                './app.js',
-                './sw.js',
-                './manifest.json',
-                './favicon'
+                '/',
+                '/app.js',
+                '/sw.js',
+                '/manifest.json',
+                '/favicon'
               ])
         })
         .catch(error=> console.log('sw error: ' + error))

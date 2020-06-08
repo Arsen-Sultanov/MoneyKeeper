@@ -9,13 +9,14 @@ const URLS = [
 ];
 
 this.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches.open(CACHES_V)
+    const preCache = async ()=> {
+      caches.open(CACHES_V)
         .then(function(cache) {
               return cache.addAll(URLS)
         })
         .catch(error=> console.log('sw error: ' + error))
-    );
+    }
+    event.waitUntil();
 });
 
 this.addEventListener('fetch', (event) => {

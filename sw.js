@@ -1,21 +1,24 @@
+const BASE_URL = '/MoneyKeeper/';
+const CACHES_V = 'v1'
+const URLS = [
+  BASE_URL,
+  BASE_URL + 'app.js',
+  BASE_URL + 'sw.js',
+  BASE_URL + 'manifest.json',
+  BASE_URL + 'favicon'
+];
+
 this.addEventListener('install', function(event) {
-  console.log(event);
     event.waitUntil(
-        caches.open('v1')
+        caches.open(CACHES_V)
         .then(function(cache) {
-              return cache.addAll([
-                '/',
-                '/app.js',
-                '/sw.js',
-                '/manifest.json',
-                '/favicon'
-              ])
+              return cache.addAll(URLS)
         })
         .catch(error=> console.log('sw error: ' + error))
     );
 });
+
 this.addEventListener('fetch', (event) => {
-  console.log(111, event.request);
   event.respondWith(
     caches.match(event.request)
   );
